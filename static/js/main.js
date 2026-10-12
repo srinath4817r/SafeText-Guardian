@@ -142,8 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const savedTheme = localStorage.getItem('safetext-guardian-theme');
         if (savedTheme) {
             setTheme(savedTheme);
-        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            setTheme('dark');
         } else {
             setTheme('light');
         }
