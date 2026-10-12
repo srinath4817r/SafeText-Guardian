@@ -12,15 +12,6 @@ SafeText Guardian is a specialized scam-text and phishing-link inspector. It com
 3. **Gemma 4 Analysis**: The AI reviews the redacted text and rule evidence to produce a final risk level (Low/Medium/High) and a plain-language explanation.
 4. **Accessible UI**: Results are presented with large badges and a read-aloud feature for ease of use.
 
-## Architecture
-```mermaid
-graph TD
-    User[User Input] --> Redact[Redact Personal Info]
-    Redact --> Rules[Rules Engine]
-    Rules --> Gemma[Gemma 4 AI]
-    Gemma --> Verdict[Final Verdict JSON]
-    Verdict --> UI[Accessible Dashboard]
-```
 
 ## AI / Partner Technology Used
 - **Gemma 4**: Used for final risk assessment and explanation.
