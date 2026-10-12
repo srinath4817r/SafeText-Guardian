@@ -1,6 +1,17 @@
+
+#DEMO VIDEOS 
+https://github.com/user-attachments/assets/ff2eed36-11ff-43b1-b4c4-d9d7e9415c2a
+
+
+
+
+
 # SafeText Guardian
 
 ## Problem
+
+
+
 Older adults are frequently targeted by SMS and WhatsApp scams. They often lack the technical tools to distinguish between a genuine bank alert and a phishing attempt.
 
 ## Solution
