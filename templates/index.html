@@ -1,33 +1,52 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SafeText Guardian - Scam Text & Phishing Inspector</title>
+    <title>SafeText Guardian - Know before you click</title>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="header-nav">
-                <div class="brand-group">
-                    <div class="logo-shield">
-                        <svg class="shield-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            <path d="M9 12l2 2 4-4"/>
-                        </svg>
-                    </div>
-                    <div class="brand-text">
-                        <h1 id="appTitle">SafeText Guardian</h1>
-                        <p class="subtitle" id="appSubtitle">Protecting you from scam texts & phishing</p>
-                    </div>
-                </div>
+    <!-- Ambient Liquid Glass Bubbles & Caustic Glows -->
+    <div class="liquid-bg-effects" aria-hidden="true">
+        <div class="ambient-glow glow-left"></div>
+        <div class="ambient-glow glow-right"></div>
+        <div class="ambient-glow glow-center"></div>
+        <div class="liquid-bubble bubble-top-left"></div>
+        <div class="liquid-bubble bubble-top-right"></div>
+        <div class="liquid-bubble bubble-mid-left"></div>
+        <div class="liquid-bubble bubble-bot-right"></div>
+    </div>
 
-                <div class="header-actions">
-                    <button id="themeToggleBtn" class="theme-toggle-btn" type="button" aria-label="Toggle dark and light theme" title="Toggle theme">
-                        <span class="theme-icon-container">
-                            <!-- Sun SVG (visible in dark mode) -->
-                            <svg class="sun-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <div class="app-layout">
+        <!-- Top Navigation Bar -->
+        <header class="navbar">
+            <div class="nav-brand">
+                <div class="logo-badge">
+                    <svg class="logo-shield-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                </div>
+                <div class="brand-titles">
+                    <span class="brand-name">SafeText <span class="brand-highlight">Guardian</span></span>
+                    <span class="brand-subtitle">Protecting you from scam texts & phishing</span>
+                </div>
+            </div>
+
+            <!-- Liquid Glass Navigation Capsule -->
+            <nav class="nav-glass-capsule">
+                <a href="#home" class="nav-tab active">Home</a>
+                <a href="#howItWorks" class="nav-tab">How it works</a>
+                <a href="#features" class="nav-tab">Features</a>
+                <a href="#privacy" class="nav-tab">Privacy</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="themeToggleBtn" class="theme-toggle-pill" type="button" aria-label="Toggle theme">
+                    <span class="theme-pill-track">
+                        <span class="pill-icon sun-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <circle cx="12" cy="12" r="5"/>
                                 <line x1="12" y1="1" x2="12" y2="3"/>
                                 <line x1="12" y1="21" x2="12" y2="23"/>
@@ -38,179 +57,611 @@
                                 <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
                                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
                             </svg>
-                            <!-- Moon SVG (visible in light mode) -->
-                            <svg class="moon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        </span>
+                        <span class="pill-icon moon-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
                             </svg>
                         </span>
-                        <span class="theme-glow"></span>
-                    </button>
+                        <span class="pill-thumb"></span>
+                    </span>
+                </button>
+
+                <div class="nav-lang-pill">
+                    <svg class="nav-globe-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                    <select id="language" class="language-dropdown-nav" aria-label="Select language">
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi (हिन्दी)</option>
+                        <option value="Telugu">Telugu (తెలుగు)</option>
+                    </select>
                 </div>
             </div>
         </header>
 
-        <main>
-            <div class="input-section">
-                <div class="controls">
-                    <div class="language-wrapper">
-                        <svg class="control-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="2" y1="12" x2="22" y2="12"/>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        <!-- Hero Section with Floating Liquid Elements -->
+        <section class="hero-section" id="home">
+            <!-- Floating Tilted Liquid Badge (Left) -->
+            <div class="float-glass-badge float-left-badge" aria-hidden="true">
+                <div class="float-badge-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                    </svg>
+                </div>
+                <div class="float-badge-text">
+                    <span>Scam?</span>
+                    <span>Phishing?</span>
+                    <span>Safe?</span>
+                </div>
+            </div>
+
+            <!-- Floating 3D Liquid Shield & Risk Pills (Right) -->
+            <div class="float-glass-group float-right-group" aria-hidden="true">
+                <div class="liquid-shield-graphic">
+                    <div class="shield-crystal">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M9 12l2 2 4-4"/>
                         </svg>
-                        <select id="language" class="rounded-control" aria-label="Select interface language">
-                            <option value="English">English</option>
-                            <option value="Hindi">Hindi (हिन्दी)</option>
-                            <option value="Telugu">Telugu (తెలుగు)</option>
-                        </select>
+                    </div>
+                    <div class="shield-halo-ring"></div>
+                </div>
+                <div class="float-status-stack">
+                    <div class="liquid-pill pill-scam">
+                        <span class="pill-badge-icon">🛡️</span>
+                        <span>Scam</span>
+                    </div>
+                    <div class="liquid-pill pill-suspicious">
+                        <span class="pill-badge-icon">⚠️</span>
+                        <span>Suspicious</span>
+                    </div>
+                    <div class="liquid-pill pill-safe">
+                        <span class="pill-badge-icon">✔️</span>
+                        <span>Safe</span>
                     </div>
                 </div>
+            </div>
 
-                <div class="form-field">
-                    <textarea id="textInput" placeholder="Paste the message here..."></textarea>
+            <!-- Center Headline -->
+            <div class="hero-content-center">
+                <div class="ai-badge-pill">
+                    <svg class="spark-svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5z"/>
+                    </svg>
+                    <span>AI-POWERED MESSAGE PROTECTION</span>
                 </div>
-                
-                <div class="upload-container">
-                    <div class="upload-dropzone" id="dropZone" role="button" tabindex="0" aria-label="Upload screenshot dropzone">
+                <h1 class="hero-title">Know before you <span class="highlight-click">click.</span></h1>
+                <p class="hero-subtitle">Check suspicious texts, links, and screenshots in seconds with Google Gemma 4.</p>
+            </div>
+        </section>
+
+        <!-- Main Dashboard 3-Column Liquid Grid -->
+        <div class="dashboard-grid liquid-grid">
+            <!-- Left Column: 3 Liquid Feature Cards -->
+            <aside class="features-sidebar-left">
+                <a href="#features" class="glass-card liquid-feature-card link-feature-block">
+                    <div class="feature-item-row">
+                        <div class="feature-icon-box icon-scams">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-content">
+                            <h4>Detect Scams</h4>
+                            <p>Find common scam formats, threat phrases and fake offers.</p>
+                        </div>
+                        <span class="feature-arrow">→</span>
+                    </div>
+                </a>
+
+                <a href="#features" class="glass-card liquid-feature-card link-feature-block">
+                    <div class="feature-item-row">
+                        <div class="feature-icon-box icon-links">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-content">
+                            <h4>Check Links</h4>
+                            <p>Analyze links for dangerous or deceptive websites.</p>
+                        </div>
+                        <span class="feature-arrow">→</span>
+                    </div>
+                </a>
+
+                <a href="#features" class="glass-card liquid-feature-card link-feature-block">
+                    <div class="feature-item-row">
+                        <div class="feature-icon-box icon-impersonation">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <div class="feature-item-content">
+                            <h4>Spot Impersonation</h4>
+                            <p>Detect fake bank alerts, KYC threats and urgency tactics.</p>
+                        </div>
+                        <span class="feature-arrow">→</span>
+                    </div>
+                </a>
+            </aside>
+
+            <!-- Center Column: Primary Interactive Analyzer Card -->
+            <main class="analyzer-col-center">
+                <div class="glass-card analyzer-card liquid-glass-main">
+                    <div class="card-header-row">
+                        <div class="card-title-group">
+                            <div class="title-icon-box">
+                                <svg class="msg-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                            </div>
+                            <div class="card-titles">
+                                <h2>Analyze a message</h2>
+                                <p>Paste a text, link, or upload a screenshot to detect scams, phishing, and fraud.</p>
+                            </div>
+                        </div>
+                        <div class="privacy-design-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                            <span>Private & secure</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input Box with Character Counter -->
+                    <div class="text-input-wrapper">
+                        <textarea id="textInput" placeholder="Paste a suspicious SMS, WhatsApp message, email, or link here..." maxlength="5000"></textarea>
+                        <span class="char-counter" id="charCounter">0/5000</span>
+                    </div>
+
+                    <!-- Dropzone File Upload -->
+                    <div class="upload-dropzone" id="dropZone" role="button" tabindex="0">
                         <input type="file" id="imageInput" accept="image/png, image/jpeg, image/webp" class="file-input-hidden">
                         
-                        <div class="upload-idle" id="uploadIdle">
-                            <div class="upload-icon-pulse">
-                                <svg class="upload-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="dropzone-idle" id="uploadIdle">
+                            <div class="upload-bubble">
+                                <svg class="cloud-up-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                                     <polyline points="17 8 12 3 7 8"/>
                                     <line x1="12" y1="3" x2="12" y2="15"/>
                                 </svg>
                             </div>
-                            <div class="upload-texts">
-                                <span class="upload-main-text" id="uploadMainText">Upload Screenshot</span>
-                                <span class="upload-sub-text" id="uploadSubText">Click to browse or drop image (PNG, JPG, WebP)</span>
+                            <div class="dropzone-prompts">
+                                <span class="drop-primary" id="uploadMainText">Drop a screenshot here or <strong class="browse-link">browse files</strong></span>
+                                <span class="drop-secondary" id="uploadSubText">PNG, JPG, WebP · Max 5 MB</span>
                             </div>
                         </div>
 
-                        <div class="upload-selected hidden" id="uploadSelected">
-                            <div class="file-info-group">
-                                <svg class="file-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="dropzone-selected hidden" id="uploadSelected">
+                            <div class="selected-file-info">
+                                <svg class="img-preview-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
                                     <circle cx="8.5" cy="8.5" r="1.5"/>
                                     <polyline points="21 15 16 10 5 21"/>
                                 </svg>
-                                <div class="file-labels">
-                                    <span class="file-name" id="fileName">screenshot.png</span>
-                                    <span class="file-size" id="fileSize">1.2 MB</span>
+                                <div class="file-meta">
+                                    <span class="file-title" id="fileName">screenshot.png</span>
+                                    <span class="file-size-badge" id="fileSize">1.2 MB</span>
                                 </div>
                             </div>
-                            <button type="button" class="remove-btn" id="removeFileBtn" title="Remove image" aria-label="Remove image">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <button type="button" class="btn-remove-file" id="removeFileBtn" title="Remove image">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
                                     <line x1="18" y1="6" x2="6" y2="18"/>
                                     <line x1="6" y1="6" x2="18" y2="18"/>
                                 </svg>
                             </button>
                         </div>
                     </div>
-                </div>
 
-                <!-- Transforming Action Button -->
-                <button id="analyzeBtn" class="primary-btn" type="button">
-                    <span class="btn-idle-content">
-                        <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8"/>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                        </svg>
-                        <span class="btn-text" id="btnIdleText">Analyze Message</span>
-                    </span>
-                    <span class="btn-active-analyzing hidden">
-                        <span class="btn-pulse-scanner">
-                            <span class="btn-spin-orbit"></span>
-                            <svg class="btn-shield-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <!-- Glowing Liquid Capsule Primary Action Button -->
+                    <button id="analyzeBtn" class="action-btn liquid-btn" type="button">
+                        <span class="btn-idle-content">
+                            <svg class="btn-search-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
                             </svg>
+                            <span class="btn-label" id="btnIdleText">Analyze Message</span>
+                            <span class="btn-arrow">›</span>
                         </span>
-                        <span class="btn-status-group">
-                            <span class="btn-status-label" id="btnStatusLabel">Analyzing message...</span>
-                            <span class="btn-model-info" id="btnActiveModel">Gemma 4 (gemma-4-31b-it)</span>
-                        </span>
-                        <span class="btn-progress-track">
-                            <span class="btn-progress-shimmer"></span>
-                        </span>
-                    </span>
-                </button>
-            </div>
 
-            <div id="resultSection" class="hidden">
-                <div id="riskBadge" class="badge"></div>
-                
-                <div class="meta-info" id="metaInfo">
-                    <div class="model-verified-tag">
-                        <svg class="model-svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
-                        <span><span id="analysedByPrefix">Analysed by</span> <strong id="resultModelName">Gemma 4 (gemma-4-31b-it)</strong></span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 id="explanationTitle">Explanation</h3>
-                    <p id="explanationText" class="result-text"></p>
-                    <button id="readAloudBtn" class="read-btn" type="button">
-                        <svg class="btn-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                        </svg>
-                        <span id="readAloudLabel">Read Aloud</span>
+                        <span class="btn-active-analyzing hidden">
+                            <span class="btn-spinner-orbit"></span>
+                            <span class="btn-loading-text" id="btnStatusLabel">Analyzing with Gemma...</span>
+                            <span class="btn-active-model" id="btnActiveModel">gemma-4-31b-it</span>
+                            <span class="btn-progress-line"><span class="btn-progress-glow"></span></span>
+                        </span>
                     </button>
                 </div>
 
-                <div class="card" id="linkCheckSection">
-                    <h3 id="linkCheckTitle">Link Check</h3>
-                    <div id="linkList"></div>
-                </div>
+                <!-- Analysis Results Section -->
+                <div id="resultSection" class="result-container hidden">
+                    <div class="result-verdict-card glass-card liquid-verdict-card">
+                        <div class="verdict-top-bar">
+                            <div class="verdict-label-text">ASSESSED RISK:</div>
+                            <div id="riskBadge" class="risk-badge"></div>
+                        </div>
 
-                <div class="card">
-                    <h3 id="nextStepsTitle">Next Steps</h3>
-                    <ul id="nextStepsList"></ul>
-                    <div class="footer-advice">
-                        <svg class="inline-svg-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="12" y1="8" x2="12" y2="12"/>
-                            <line x1="12" y1="16" x2="12.01" y2="16"/>
-                        </svg>
-                        <span id="reminderText"><strong>Reminder:</strong> Do not click links, block the sender, call 1930, or report at cybercrime.gov.in</span>
+                        <div class="verified-ai-tag">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                            <span>Analysed by <strong id="resultModelName">Gemma 4 (gemma-4-31b-it)</strong></span>
+                        </div>
+
+                        <!-- Explanation -->
+                        <div class="sub-result-card">
+                            <h3 id="explanationTitle">Explanation</h3>
+                            <p id="explanationText" class="explanation-paragraph"></p>
+                            <button id="readAloudBtn" class="speech-action-btn" type="button">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                                </svg>
+                                <span id="readAloudLabel">Read Aloud</span>
+                            </button>
+                        </div>
+
+                        <!-- Link Inspection -->
+                        <div class="sub-result-card" id="linkCheckSection">
+                            <h3 id="linkCheckTitle">Link Check</h3>
+                            <div id="linkList" class="links-flow"></div>
+                        </div>
+
+                        <!-- Recommended Next Steps -->
+                        <div class="sub-result-card next-steps-box">
+                            <h3 id="nextStepsTitle">Next Steps</h3>
+                            <ul id="nextStepsList" class="steps-flow"></ul>
+                            <div class="emergency-reminder" id="reminderText">
+                                <strong>Reminder:</strong> Do not click links, block the sender, call 1930, or report at cybercrime.gov.in
+                            </div>
+                        </div>
+
+                        <!-- WhatsApp Share -->
+                        <div class="share-row">
+                            <button id="warnFamilyBtn" class="whatsapp-btn" type="button">
+                                <svg class="wa-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.71 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.414z"/>
+                                </svg>
+                                <span id="warnFamilyLabel">Warn my family</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="actions">
-                    <button id="warnFamilyBtn" class="whatsapp-share-btn" type="button">
-                        <svg class="wa-svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.71 1.456h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.414z"/>
-                        </svg>
-                        <span id="warnFamilyLabel">Warn my family</span>
-                    </button>
-                </div>
-            </div>
-
-            <div id="errorSection" class="hidden card error" role="alert">
-                <div class="error-content">
-                    <svg class="error-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Error Toast Card -->
+                <div id="errorSection" class="error-banner glass-card hidden">
+                    <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="10"/>
                         <line x1="12" y1="8" x2="12" y2="12"/>
                         <line x1="12" y1="16" x2="12.01" y2="16"/>
                     </svg>
                     <p id="errorText"></p>
                 </div>
-            </div>
-        </main>
+            </main>
 
-        <footer>
-            <div class="privacy-notice">
-                <svg class="lock-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                </svg>
-                <p id="privacyText"><strong>Privacy Assurance:</strong> No photos or messages are stored on our servers. Messages are sent to Google's Gemini API for analysis. Screenshots are NOT masked, so avoid images with OTPs or personal numbers.</p>
+            <!-- Right Column: "Your privacy matters" Liquid Card + Emergency Quick Help -->
+            <aside class="sidebar-col-right">
+                <div class="glass-card privacy-sidebar-card liquid-privacy-card" id="privacyCard">
+                    <div class="privacy-icon-top">
+                        <div class="item-icon-circle icon-lock-liquid">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="privacy-text-content">
+                        <h4>Your privacy matters</h4>
+                        <p id="privacyText">No photos or messages are stored on our servers. Your data is sent securely to Google's Gemini API for analysis. Screenshots are NOT masked, so avoid images with OTPs or personal numbers.</p>
+                        <a href="#privacy" class="learn-more-btn">Read privacy details →</a>
+                    </div>
+                </div>
+
+                <div class="glass-card emergency-sidebar-card">
+                    <div class="emergency-badge-tag">EMERGENCY RADAR</div>
+                    <h4>Report Cyber Fraud Fast</h4>
+                    <p>If you shared an OTP or lost money, report immediately:</p>
+                    <div class="emergency-contacts-row">
+                        <div class="contact-pill-item">
+                            <span class="contact-label">National Helpline</span>
+                            <span class="contact-number">1930</span>
+                        </div>
+                        <div class="contact-pill-item">
+                            <span class="contact-label">Official Portal</span>
+                            <span class="contact-web">cybercrime.gov.in</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Bottom Flow Steps Dock -->
+        <section class="steps-overview-card glass-card liquid-dock">
+            <div class="step-card-col">
+                <div class="step-badge-circle icon-step-1">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                    </svg>
+                    <span class="step-number-tag">1</span>
+                </div>
+                <div class="step-details">
+                    <h4>Paste or upload</h4>
+                    <p>Add a suspicious message or screenshot.</p>
+                </div>
+            </div>
+
+            <div class="step-dock-arrow">→</div>
+
+            <div class="step-card-col">
+                <div class="step-badge-circle icon-step-2">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5z"/>
+                    </svg>
+                    <span class="step-number-tag">2</span>
+                </div>
+                <div class="step-details">
+                    <h4>AI analyzes</h4>
+                    <p>We check text, links and images for scam indicators.</p>
+                </div>
+            </div>
+
+            <div class="step-dock-arrow">→</div>
+
+            <div class="step-card-col">
+                <div class="step-badge-circle icon-step-3">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    <span class="step-number-tag">3</span>
+                </div>
+                <div class="step-details">
+                    <h4>Get clear results</h4>
+                    <p>See if it's safe or risky, with simple recommendations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             Dedicated Section: How It Works
+             ================================================================== -->
+        <section class="info-section" id="howItWorks">
+            <div class="section-title-wrap">
+                <span class="section-tag-pill">DEEP DIVE EXPLAINER</span>
+                <h2 class="section-heading">How SafeText Guardian Works</h2>
+                <p class="section-subheading">A 4-stage pipeline combining local privacy masking, deterministic heuristics, and Google Gemma 4 AI reasoning.</p>
+            </div>
+
+            <div class="info-grid-4">
+                <div class="glass-card info-card">
+                    <div class="info-step-num">01</div>
+                    <div class="info-card-icon icon-shield-warm">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3>Smart Data Redaction</h3>
+                    <p>Personal numbers and secret codes are masked locally on the server before AI evaluation. Indian 10-digit mobile numbers and OTP digits are filtered while legitimate links and amounts remain intact for analysis.</p>
+                </div>
+
+                <div class="glass-card info-card">
+                    <div class="info-step-num">02</div>
+                    <div class="info-card-icon icon-rules-warm">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                            <line x1="11" y1="8" x2="11" y2="14"/>
+                            <line x1="8" y1="11" x2="14" y2="11"/>
+                        </svg>
+                    </div>
+                    <h3>Heuristic Rules Engine</h3>
+                    <p>Inspects hostnames for brand impersonation against genuine Indian institutions (SBI, HDFC, ICICI, Paytm, Income Tax), identifies URL shorteners (bit.ly, tinyurl), risky TLDs, and detects psychological urgency phrases.</p>
+                </div>
+
+                <div class="glass-card info-card">
+                    <div class="info-step-num">03</div>
+                    <div class="info-card-icon icon-gemma-warm">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Google Gemma 4 Reasoning</h3>
+                    <p>Powered by Google's open-weight Gemma 4 model via the Gemini API. Evaluates untrusted sender context, detects parcel delivery traps, electricity cutoff scams, and subtle social engineering that bypasses rigid filters.</p>
+                </div>
+
+                <div class="glass-card info-card">
+                    <div class="info-step-num">04</div>
+                    <div class="info-card-icon icon-verdict-warm">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </div>
+                    <h3>Plain-Language Verdict</h3>
+                    <p>Generates an unequivocal Low, Medium, or High risk verdict with zero technical jargon. Provides plain language explanations in English, Hindi, or Telugu, actionable next steps, and a one-tap family alert.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             Dedicated Section: Features
+             ================================================================== -->
+        <section class="info-section" id="features">
+            <div class="section-title-wrap">
+                <span class="section-tag-pill">ENGINEERED FOR FAMILIES</span>
+                <h2 class="section-heading">Built to Shield Everyday Users</h2>
+                <p class="section-subheading">Designed with accessibility and high-contrast liquid ergonomics so older adults never fall prey to phishing tricks.</p>
+            </div>
+
+            <div class="info-grid-3">
+                <div class="glass-card feature-showcase-card">
+                    <div class="showcase-icon-circle icon-camera-glow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                            <circle cx="12" cy="13" r="4"/>
+                        </svg>
+                    </div>
+                    <h3>Multi-Modal Screenshot Scanner</h3>
+                    <p>Don't want to type or tap on risky links? Just upload or take a screenshot of your WhatsApp chat, SMS inbox, or bank alert. Gemma 4 reads and parses the screenshot safely.</p>
+                    <ul class="feature-bullet-list">
+                        <li>Supports PNG, JPG, and WebP up to 5 MB</li>
+                        <li>Reads blurred, cropped, and vernacular screenshots</li>
+                        <li>Extracts embedded web addresses and short links</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card feature-showcase-card">
+                    <div class="showcase-icon-circle icon-voice-glow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                        </svg>
+                    </div>
+                    <h3>Native Multilingual Voice Readout</h3>
+                    <p>Complex bank alerts shouldn't cause panic. SafeText Guardian translates explanations into English, Hindi (हिन्दी), and Telugu (తెలుగు) with native browser text-to-speech audio.</p>
+                    <ul class="feature-bullet-list">
+                        <li>High accessibility for elderly grandparents</li>
+                        <li>Adjustable pacing for clarity and comfort</li>
+                        <li>Complete vernacular UI text synchronization</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card feature-showcase-card">
+                    <div class="showcase-icon-circle icon-radar-glow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2a10 10 0 0 1 10 10"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                    <h3>Indian Scam Pattern Radar</h3>
+                    <p>Trained against synthetic real-world Indian cyber crime formats: fake KYC deadline countdowns, APK malware downloads, electricity cut-off notices, and counterfeit reward portals.</p>
+                    <ul class="feature-bullet-list">
+                        <li>Genuine debit/credit alerts recognized without false alarms</li>
+                        <li>Phishing lookalike checks against official government portals</li>
+                        <li>Instant recommendations to dial 1930 for financial recovery</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             Dedicated Section: Privacy & Transparency
+             ================================================================== -->
+        <section class="info-section" id="privacy">
+            <div class="section-title-wrap">
+                <span class="section-tag-pill">ZERO RETENTION PROMISE</span>
+                <h2 class="section-heading">Your Privacy & Security</h2>
+                <p class="section-subheading">Complete transparency in how your queries are handled and evaluated.</p>
+            </div>
+
+            <div class="privacy-manifesto-card glass-card">
+                <div class="manifesto-grid">
+                    <div class="manifesto-col">
+                        <div class="manifesto-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                        </div>
+                        <h3>Zero Server Logging</h3>
+                        <p>We do not store, log, or record user messages or uploaded screenshots on our servers or databases. Once analysis finishes, memory is immediately released.</p>
+                    </div>
+
+                    <div class="manifesto-col">
+                        <div class="manifesto-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <line x1="12" y1="8" x2="12" y2="12"/>
+                                <line x1="12" y1="16" x2="12.01" y2="16"/>
+                            </svg>
+                        </div>
+                        <h3>API Transmission Notice</h3>
+                        <p>Messages and images are transmitted to Google's Gemini API endpoints for analysis by Gemma 4. Screenshots are NOT masked before upload, so avoid uploading images displaying active OTPs or personal Aadhaar/PAN cards.</p>
+                    </div>
+
+                    <div class="manifesto-col">
+                        <div class="manifesto-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
+                            </svg>
+                        </div>
+                        <h3>No Trackers or Analytics</h3>
+                        <p>SafeText Guardian includes zero advertising trackers, third-party user fingerprinting, or marketing cookies. You get clean, uninterrupted protection.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================================
+             Footer - Developed by OpenCraft
+             ================================================================== -->
+        <footer class="app-footer glass-card">
+            <div class="footer-inner">
+                <div class="footer-brand-col">
+                    <div class="footer-logo-row">
+                        <div class="logo-badge footer-logo-badge">
+                            <svg class="logo-shield-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <span class="footer-brand-title">SafeText <span class="brand-highlight">Guardian</span></span>
+                    </div>
+                    <p class="footer-tagline">AI scam & phishing link inspector engineered for vulnerable digital citizens.</p>
+                    <div class="dev-opencraft-badge">
+                        <span class="badge-dot-glow"></span>
+                        <span>Developed by <strong>OpenCraft</strong></span>
+                    </div>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Inspector Workspace</a></li>
+                        <li><a href="#howItWorks">How It Works</a></li>
+                        <li><a href="#features">Protection Features</a></li>
+                        <li><a href="#privacy">Privacy & Security</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Hackathon & Tech</h4>
+                    <ul>
+                        <li><span>Hacktoberfest Hack Day 2026</span></li>
+                        <li><span>NIAT-KKH x MLH</span></li>
+                        <li><span>Challenge: Best Use of Gemma 4</span></li>
+                        <li><span>Powered by Google Gemini API</span></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col emergency-col">
+                    <h4>National Cyber Helpline</h4>
+                    <p class="helpline-num-big">1930</p>
+                    <p class="helpline-desc">Report financial cyber fraud immediately to National Cyber Crime Reporting Portal.</p>
+                    <a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" class="helpline-gov-link">cybercrime.gov.in →</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <p>© 2026 SafeText Guardian. Team <strong>OpenCraft</strong>. Open-source protection under MIT License.</p>
+                <p class="footer-ai-note">Built with Google Gemma 4 on Google AI Studio.</p>
             </div>
         </footer>
     </div>
+
     <script src="/static/js/main.js"></script>
 </body>
 </html>
