@@ -1,0 +1,28 @@
+{
+    "verdict": {
+        "risk_level": "High",
+        "scam_type": "Phishing",
+        "red_flags": ["Suspicious URL", "Urgent Language", "KYC Threat"],
+        "explanation": "This message uses urgent language and a fake KYC link to steal your bank details.",
+        "next_steps": ["Do not click the link", "Block the sender", "Report at cybercrime.gov.in"]
+    },
+    "evidence": {
+        "links": [
+            {
+                "url": "http://sbi-kyc-update.xyz/claim",
+                "host": "sbi-kyc-update.xyz",
+                "reasons": ["Risky TLD", "Looks like sbi.co.in but isn't"]
+            }
+        ],
+        "phrases": [
+            {
+                "category": "urgency",
+                "text": "Update KYC now"
+            },
+            {
+                "category": "KYC threat",
+                "text": "Update KYC"
+            }
+        ]
+    }
+}

@@ -1,0 +1,82 @@
+[
+    {
+        "text": "Your SBI account is blocked. Update KYC now at http://sbi-kyc-update.xyz/claim",
+        "expected": "High"
+    },
+    {
+        "text": "Dear user, you won Rs 1 Crore! Claim reward at bit.ly/win-big-cash",
+        "expected": "High"
+    },
+    {
+        "text": "Urgent: Your electricity bill is pending. Pay immediately or power will be cut: http://pay-bill.top/india",
+        "expected": "High"
+    },
+    {
+        "text": "Your HDFC account was debited by Rs 1200 at Amazon.in",
+        "expected": "Low"
+    },
+    {
+        "text": "OTP for your login is 123456. Do not share this with anyone.",
+        "expected": "Low"
+    },
+    {
+        "text": "Package delivery failed. Update address at http://delivery-track.biz/update",
+        "expected": "High"
+    },
+    {
+        "text": "Verify your account details to avoid suspension: http://verify-bank.click/login",
+        "expected": "High"
+    },
+    {
+        "text": "Your Amazon delivery is arriving today. Track here: https://amazon.in/orders",
+        "expected": "Low"
+    },
+    {
+        "text": "Congratulations! You have been selected for a gift voucher. Get it at www.gift-win.info",
+        "expected": "High"
+    },
+    {
+        "text": "Income Tax Refund of Rs 15,000 available. Claim here: http://refund-it.gov.in.fake",
+        "expected": "High"
+    },
+    {
+        "text": "Your account XX9876 has been credited with Rs 2000 by UPI",
+        "expected": "Low"
+    },
+    {
+        "text": "ALERT: Your bank account is under threat. Call +91 9876543210 to fix",
+        "expected": "High"
+    },
+    {
+        "text": "Please provide your OTP to the bank executive for KYC verification",
+        "expected": "High"
+    },
+    {
+        "text": "Your order from Flipkart is packed and ready for shipping",
+        "expected": "Low"
+    },
+    {
+        "text": "Urgent security alert: Unusual login detected. Verify now: http://security-check.top",
+        "expected": "High"
+    },
+    {
+        "text": "Bank Notification: Monthly interest of Rs 50 credited to your account",
+        "expected": "Low"
+    },
+    {
+        "text": "You have a pending reward of Rs 500. Click bit.ly/reward-cash",
+        "expected": "High"
+    },
+    {
+        "text": "Your account XX1122 has been debited for Rs 200 by Zomato",
+        "expected": "Low"
+    },
+    {
+        "text": "Your KYC has expired. Update immediately or account will be frozen",
+        "expected": "High"
+    },
+    {
+        "text": "Welcome to your new bank account. Please read the terms and conditions",
+        "expected": "Low"
+    }
+]
